@@ -1,0 +1,6 @@
+{
+  "name": "PrettyAngel's Boutique",
+  "description": "Women's luxury occasion-wear boutique at Unit 23/24, Vicarage Field Shopping Centre, Barking IG11 8DH. Dresses, skirts, women's suits, shoes, and bags.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

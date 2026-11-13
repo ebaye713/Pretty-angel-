@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-petal: #FDF6F7;
+  --color-blush-silk: #F9E8EC;
+  --color-blush-petal: #F2C9D4;
+  --color-rose-gold: #B87463;
+  --color-rose-champagne: #E7B8A9;
+  --color-mulberry: #2E1620;
+  --color-plum-velvet: #3D1F2B;
+  --color-plum-muted: #664954;
+}
+
+@keyframes silkAurora {
+  0% {
+    transform: translate3d(-4%, -3%, 0) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.06);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(-4%, -3%, 0) scale(1);
+    opacity: 0.65;
+  }
+}
+
+@keyframes goldAuraDrift {
+  0% {
+    transform: translate3d(3%, -2%, 0) scale(1.03);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(-3%, 4%, 0) scale(0.98);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(3%, -2%, 0) scale(1.03);
+    opacity: 0.5;
+  }
+}
+
+.animate-silk-aurora {
+  animation: silkAurora 14s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-gold-drift {
+  animation: goldAuraDrift 18s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #FDF6F7;
+    color: #2E1620;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .animate-silk-aurora,
+    .animate-gold-drift {
+      animation: none;
+    }
+  }
+}
